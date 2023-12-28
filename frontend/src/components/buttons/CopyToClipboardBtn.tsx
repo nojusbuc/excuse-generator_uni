@@ -26,7 +26,7 @@ const CopyToClipboardButton: React.FC<CopyToClipboardButtonProps> = ({ text }) =
     };
 
     const handleCloseSnackbar = (
-        event: React.SyntheticEvent | Event, // Change this line to match the expected type
+        event: React.SyntheticEvent | Event,
         reason?: string
     ) => {
         if (reason === 'clickaway') {
@@ -37,14 +37,14 @@ const CopyToClipboardButton: React.FC<CopyToClipboardButtonProps> = ({ text }) =
 
 
     return (
-        <div>
+        <>
             <Button onClick={handleCopy}>Copy</Button>
             <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleCloseSnackbar}>
                 <Alert onClose={handleCloseSnackbar} severity={severity} sx={{ width: '100%' }}>
                     {snackbarMessage}
                 </Alert>
             </Snackbar>
-        </div>
+        </>
     );
 }
 

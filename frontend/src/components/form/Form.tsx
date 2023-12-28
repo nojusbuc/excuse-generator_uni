@@ -1,9 +1,16 @@
 import { FormControl, InputLabel, MenuItem, FormHelperText, Select, TextField, Button, Box, Typography, Card } from '@mui/material';
 import React, { useState } from 'react';
 import { ExcuseParameters } from '../../interfaces/excuseParameters';
+import { Excuse } from '../../interfaces/excuse';
 
+interface FormProps {
+    // excuses: Excuse[];
+    setExcuses: React.Dispatch<React.SetStateAction<Excuse[]>>;
+    mockExcuse: Excuse;
 
-const Form: React.FC = () => {
+}
+
+const Form: React.FC<FormProps> = ({ setExcuses, mockExcuse }) => {
 
     const [language, setLanguage] = useState<string>('');
     const [format, setFormat] = useState<string>('');
@@ -12,10 +19,10 @@ const Form: React.FC = () => {
     const [length, setLength] = useState<string>('');
     const [context, setContext] = useState<string>('');
 
-    
+
 
     return (
-        
+
         <Card className="form" sx={{
             width: "75vw",
             margin: "0 auto",
@@ -49,7 +56,7 @@ const Form: React.FC = () => {
                     <Select
                         value={format}
                         label="Format"
-                        
+
                         onChange={(event) => setFormat(event.target.value)}
 
                     >
@@ -131,17 +138,17 @@ const Form: React.FC = () => {
             }}>
                 <TextField id="outlined-basic" label="Enter the context for excuse" variant="outlined" sx={{
                     width: "51.5vw"
-                }} onBlur={(event) => setContext(event?.target.value)}/>
-                
+                }} onBlur={(event) => setContext(event?.target.value)} />
+
             </Box>
 
             <Box className="third-row" sx={{
                 marginTop: "2vh"
             }}>
                 <Button variant="contained" sx={{
-                    
-                }}onClick={() => {
-                    
+
+                }} onClick={() => {
+
                     const excuseParams: ExcuseParameters = {
                         language: language,
                         format: format,
@@ -153,6 +160,12 @@ const Form: React.FC = () => {
 
                     const jsonParams = JSON.stringify(excuseParams);
                     console.log(jsonParams);
+
+                    // append mock excuse to excuses array
+
+                    // console.log(excuses);
+                    // setExcuses([...excuses, mockExcuse]);
+                    setExcuses(prevExcuses => [...prevExcuses, mockExcuse]);
                 }}>Submit</Button>
 
             </Box>

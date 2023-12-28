@@ -1,6 +1,6 @@
 export interface Excuse {
-    id: number;
+    id: string;
     title: string;
-    dateCreated: Date;
+    dateCreated: string;
     content: string;
 }
