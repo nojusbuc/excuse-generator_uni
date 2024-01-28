@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://Martynas-klimas.github.io/excuse-generator_uni",
+  "homepage": "https://nojusbuc.github.io/excuse-generator_uni/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -51,6 +51,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-copy-to-clipboard": "^5.0.7"
+    "@types/react-copy-to-clipboard": "^5.0.7",
+    "gh-pages": "^6.1.1"
   }
 }
