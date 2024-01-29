@@ -84,7 +84,6 @@ const Form: React.FC<FormProps> = ({ setExcuses, mockExcuse }) => {
             setLoading(true);
             const data = await requestExcuse(excuseParams);
     
-            console.log('Excuse data:', data);
 
             setLoading(false);
 
@@ -278,9 +277,11 @@ const Form: React.FC<FormProps> = ({ setExcuses, mockExcuse }) => {
                 <Box className="second-row" sx={{
                     marginTop: "2vh"
                 }}>
-                    <TextField id="outlined-basic" inputProps={{ maxLength: 100 }} label="Enter the context for excuse" variant="outlined" sx={{
+                    <TextField id="outlined-basic" value={context}inputProps={{ maxLength: 100 }} label="Enter the context for excuse" variant="outlined" sx={{
                         width: "51.5vw"
-                    }} onBlur={(event) => setContext(event?.target.value)} />
+                    }} onChange={(event) => {
+                        setContext(event?.target.value)
+                        }} />
 
 
                 </Box>

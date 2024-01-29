@@ -1,20 +1,12 @@
-import OpenAI from 'openai';
+import axios from 'axios';
 import { ExcuseParameters } from '../interfaces/excuseParameters';
 
-const openai = new OpenAI({
-    apiKey: "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",
-    dangerouslyAllowBrowser: true
-});
-
 export const requestExcuse = async (formData: ExcuseParameters) => {
-    const prompt = `generate an excuse based on the following parameters (scale from 1-10), separate excuse title and message (parameters: ${JSON.stringify(formData)})`;
-
-    const chatCompletion = await openai.chat.completions.create({
-        messages: [{ role: 'user', content: prompt }],
-        model: 'gpt-3.5-turbo',
-    });
-
-    const latestResponse = chatCompletion.choices[0].message.content;
-    console.log(latestResponse);
-    return latestResponse;
-}
+    try {
+        const response = await axios.post('https://intense-reaches-72700-4d8b835d637c.herokuapp.com/generate-excuse', formData);
+        return response.data.excuse;
+    } catch (error) {
+        console.error('Error fetching excuse:', error);
+        return null;
+    }
+};
