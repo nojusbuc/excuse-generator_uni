@@ -58,7 +58,7 @@ const Form: React.FC<FormProps> = ({ setExcuses, mockExcuse }) => {
         const messagePrefix = "Excuse Message:";
         const messageStart = response.indexOf(messagePrefix);
         if (messageStart === -1) {
-            return "Message not found"; // Default message if not found
+            return "Message not found";
         }
         return response.substring(messageStart + messagePrefix.length).trim();
     };
@@ -147,7 +147,7 @@ const Form: React.FC<FormProps> = ({ setExcuses, mockExcuse }) => {
                             <MenuItem value="english"><em>English</em></MenuItem>
 
 
-                            {/* Other options */}
+
                         </Select>
                         <FormHelperText>Choose desired language</FormHelperText>
                     </FormControl>
