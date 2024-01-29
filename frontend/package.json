@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://Martynas-klimas.github.io/excuse-generator_uni",
+  "homepage": "https://nojusbuc.github.io/excuse-generator_uni/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -14,6 +14,9 @@
     "@types/node": "^16.18.68",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.17",
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.1",
+    "openai": "^4.26.0",
     "react": "^18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
@@ -49,6 +52,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-copy-to-clipboard": "^5.0.7"
+    "@types/react-copy-to-clipboard": "^5.0.7",
+    "gh-pages": "^6.1.1"
   }
 }

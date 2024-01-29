@@ -5,8 +5,6 @@ import Form from './components/form/Form';
 import Excuses from './components/excuses/Excuses';
 import { createdMockExcuse } from './mock_data/appendedExcuse';
 
-const LOGO_URL = "../public/logos/devlogo.png";
-
 
 
 const App = () => {
@@ -26,6 +24,8 @@ const App = () => {
     ...createdMockExcuse,
     id: Date.now().toString() + Math.floor(Math.random() * 1000000).toString(),
   }
+
+  
 
 
   return (

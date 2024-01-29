@@ -12,29 +12,24 @@ const Navbar: React.FC = () =>{
             <Container maxWidth="xl" sx={{
                 width:"80vw",
                 margin:"0 auto",
+                textAlign:"center"
                 
             }}>
                 <Toolbar sx={{
-                    textAlign: "center", margin: "0 40%",
+                    textAlign: "center",
+                    margin: "0 auto",
                 }}>
-                    <img
-                        src="/logos/devlogo.png"
-                        alt="Logo"
-                        style={{
-                            height: '80px', // or the size you want
-                            width: 'auto',
-                            marginRight: '1rem',
-                            
-                        }}
-                    />
+                    
                     <Typography
                         variant="h6"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
+                        
                         sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
+                            textAlign: "center",
+                            margin: "0 auto",
+                            padding: "0",
+                            
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
@@ -45,11 +40,6 @@ const Navbar: React.FC = () =>{
                         DevRope
                     </Typography>
 
-                    
-                    
-                    
-
-                    
                 </Toolbar>
             </Container>
         </AppBar>
